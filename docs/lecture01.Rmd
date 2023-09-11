@@ -2,7 +2,7 @@
 title: "Programming Tools in Data Science"
 subtitle: "Lecture #1: Introduction"
 author: "Samuel Orso"
-date: "20 September 2022"
+date: "28 September 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
@@ -22,9 +22,9 @@ output:
 ---
 # Motivation
 
-* "data science" hits ~3% of jobs on jobup.ch.
-* More than 300 job offers for Switzerland on LinkedIn.
-* "_Job applicants with computer skills are highly sought-after due to the increase of technology in the workplace._", [Indeed](https://www.indeed.com/career-advice/resumes-cover-letters/computer-skills), May 2022.
+* "Data Science" hits >900 of job offers on jobup.ch.
+* More than 3500 job offers for Switzerland on LinkedIn.
+* "_Job applicants with computer skills are highly sought-after due to the increase of technology in the workplace._", [Indeed](https://www.indeed.com/career-advice/resumes-cover-letters/computer-skills), August 2023.
 
 ---
 # Motivation 
@@ -38,12 +38,12 @@ src="https://www.youtube.com/embed/Tzin1DgexlE">
 ---
 # General goals
 
-* introduce tools and workflows for reproducible research (R/RStudio, Git/GitHub, etc.); 
-* introduce principles of tidy data and tools for data wrangling; 
-* exploit data structures to appropriately manage data, computer memory and computations;
-* data manipulation through controls, instructions, and tailored functions;
-* develop new software tools including functions, Shiny applications, and packages;
-* manage the software development process including version control, documentation (with embed code), and dissemination for other users.
+* Introduce tools and workflows for reproducible research (R/RStudio, Git/GitHub, etc.); 
+* Introduce principles of tidy data and tools for data wrangling; 
+* Exploit data structures to appropriately manage data, computer memory and computations;
+* Data manipulation through controls, instructions, and tailored functions;
+* Develop new software tools including functions, Shiny applications, and packages;
+* Manage the software development process including version control, documentation (with embed code), and dissemination for other users.
 
 ---
 # General goals
@@ -68,37 +68,28 @@ leaflet() %>% addTiles() %>% setView(6.58455, 46.52356, zoom = 17)
 
 .pull-right[
 .scroll-box-5[
-* Anthropole 3741
-* Every Tuesday morning from 9 to 12. Either class or practical.
+* Anthropole 3032
+* Every Thursday morning from 9 to 12. Either class or practical.
 * Verify the schedule on the course website.
 ]]
 
 ---
-## Ideal schedule (every Tuesday 9 to 12)
+## Ideal schedule (every Thursday 9 to 12)
 | Week | Date | Topic | Instructor |   
 |---|---|---|---|   
-| 1 | 20 Sep | Introduction, RMarkdown, Github | Samuel |   
-| 2 | 27 Sep | Exercise and homework 1 | Aleksandr |
-| 3 | 4 Oct | Data structures, Control structures | Samuel |
-| 4 | 11 Oct | Exercise and homework 2 | Aleksandr |
-| 5 | 18 Oct | Functions, project proposal | Samuel |
-| 6 | 25 Oct | Exercise and homework 3 | Aleksandr | 
-| 7 | 1 Nov | Group project | Aleksandr |
-| 8 | 8 Nov| Shiny app, webscraping | Samuel |
-| 9 | 15 Nov | Exercise and homework 4 | Aleksandr |
-| 10 | 22 Nov | Shiny app, R-pkg | Samuel |
-| 11 | 29 Nov | Group project | Aleksandr |
-| 12 | 6 Dec | blogdown, visualization | Samuel | 
-| 13 | 13 Dec | Group project | Aleksandr | 
-| 14 | 20 Dec | Project presentations | Samuel and Aleksandr|
-
----
-# Course logistic and expectation
-## Material
-
-* You need a laptop
-* We work mainly with <img src="images/rlogo.png" width="150px"/> and <img src="images/rstudio.png" width="300px"/>
-* All software we work with will be free for academic purposes
+| 2 | 28 Sept | Introduction, RMarkdown, Github | Samuel |
+| 3 | 5 Oct | Exercise and Homework 1, Project-oriented workflow | Aleksandr |
+| 4 | 12 Oct | Data structures, Control structures | Samuel |
+| 5 | 19 Oct | Exercise and Homework 2, R coding style guide | Aleksandr |
+| 6 | 26 Oct | Function I, Project Proposal, Webscraping | Samuel | 
+| 7 | 2 Nov | Exercise and Homework 3 | Aleksandr |
+| 8 | 9 Nov| Function II, Shiny App I | Samuel |
+| 9 | 16 Nov | Exercise and Homework 4 | Aleksandr |
+| 10 | 23 Nov | R-pkg | Samuel |
+| 11 | 30 Nov | Group Project | Aleksandr | 
+| 12 | 7 Dec |  Shiny app II, Project | Samuel |
+| 13 | 14 Dec | Group project | Aleksandr | 
+| 14 | 21 Dec | Project Presentations | Samuel and Aleksandr | 
 
 ---
 # Course logistic and expectation
@@ -122,8 +113,22 @@ Semester project | 30 | 3
 Homeworks | 30 | 3
 
 * 4 homeworks in groups of 7.5 points (**penalty for late submission**).
+* The first homework is with your group.
+* Homeworks 2, 3, 4 are individuals (we verify for code duplicates!).
 * No final examination for this class.
-* Final presentation of project last day of class (20th Dec).
+* Final presentation of project last day of class (21st Dec).
+
+---
+# Course logistic and expectation
+## Project
+
+The group project comprises:
+- **Presentation**
+- **Screencast**
+- **Shiny app**
+- **R package**
+- **GitHub repository**
+- **Website**
 
 ---
 # Course logistic and expectation
@@ -132,12 +137,12 @@ Homeworks | 30 | 3
 * We use <img src="images/slack.png" width="200px"/> to communicate and many more
 * We use the **NEIN rule**! (No Email, only If Necessary)
 * More info at [https://ptds.samorso.ch/](https://ptds.samorso.ch/)
-* To access slack: register at [https://shiny.samorso.ch/fillingform/](https://shiny.samorso.ch/fillingform/) and wait your invitation <img src="images/qrcode_shiny.samorso.ch.png" width="150px"/>
+* To access slack: register at [https://tinyurl.com/ptds2023](https://forms.gle/9EzB7J5mzNkYgCtv7) and wait your invitation.
 
 ---
 ## Take 3 minutes to complete the form
 ```{r echo=FALSE, fig.align='center'}
-knitr::include_url("https://shiny.samorso.ch/fillingform/")
+knitr::include_url("https://tinyurl.com/ptds2023")
 ```
 
 ---
