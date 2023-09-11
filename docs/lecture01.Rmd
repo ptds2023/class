@@ -26,6 +26,9 @@ output:
 * More than 3500 job offers for Switzerland on LinkedIn.
 * "_Job applicants with computer skills are highly sought-after due to the increase of technology in the workplace._", [Indeed](https://www.indeed.com/career-advice/resumes-cover-letters/computer-skills), August 2023.
 
+<img width="49%" src="images/linkedin_swiss_1.png"/>
+<img width="49%" src="images/linkedin_swiss_2.png"/>
+
 ---
 # Motivation 
 
@@ -74,7 +77,7 @@ leaflet() %>% addTiles() %>% setView(6.58455, 46.52356, zoom = 17)
 ]]
 
 ---
-## Ideal schedule (every Thursday 9 to 12)
+## Ideal schedule (every Thursday 9 to 12)    
 | Week | Date | Topic | Instructor |   
 |---|---|---|---|   
 | 2 | 28 Sept | Introduction, RMarkdown, Github | Samuel |
@@ -102,15 +105,14 @@ leaflet() %>% addTiles() %>% setView(6.58455, 46.52356, zoom = 17)
 
 
 ---
-# Course logistic and expectation
 ## Grading
 
 * Learning outcomes will be assessed based on the performances within each of the following categories:
 
-Type | Points | Bonus
-:-- | :-- | :--
-Semester project | 30 | 3
-Homeworks | 30 | 3
+Type | Points 
+:-- | :--  
+Semester project | 30 
+Homeworks | 30 
 
 * 4 homeworks in groups of 7.5 points (**penalty for late submission**).
 * The first homework is with your group.
@@ -142,7 +144,7 @@ The group project comprises:
 ---
 ## Take 3 minutes to complete the form
 ```{r echo=FALSE, fig.align='center'}
-knitr::include_url("https://tinyurl.com/ptds2023")
+knitr::include_url("https://docs.google.com/forms/d/e/1FAIpQLScQEYxeMdRYxHnvFHbRcJhtSRZeviKehI0vKjDO0WjhxEuW1Q/viewform")
 ```
 
 ---
