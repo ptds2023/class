@@ -2,7 +2,7 @@
 title: "Programming Tools in Data Science"
 subtitle: "Lecture #5: Control Structure"
 author: "Samuel Orso"
-date: "4 October 2022"
+date: "12 October 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
@@ -412,7 +412,7 @@ class: sydney-blue, center, middle
 .white[`r icons::fontawesome("file")` website]
 </a>
 
-<a href="https://github.com/ptds2022/">
+<a href="https://github.com/ptds2023/">
 .white[`r icons::fontawesome("github")` GitHub]
 </a>
 ]

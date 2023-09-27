@@ -2,7 +2,7 @@
 title: "Programming Tools in Data Science"
 subtitle: "Lecture #4: Data Structure"
 author: "Samuel Orso"
-date: "4 October 2022"
+date: "12 October 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
@@ -44,7 +44,7 @@ knitr::include_graphics(path="images/extending_r.png")
 * `R` is popular for data science (in competition with Python);
 * `R` is open-source;
 * `R` is an interpreted language;
-* `R` is highly extensible via packages (18754 available on CRAN); 
+* `R` is highly extensible via packages (19885 available on CRAN in September 2023); 
 * `R` can be interfaced with other languages (C++, Fortran, ...).
 
 ---
@@ -620,7 +620,7 @@ class: sydney-blue, center, middle
 .white[`r icons::fontawesome("file")` website]
 </a>
 
-<a href="https://github.com/ptds2022/">
+<a href="https://github.com/ptds2023/">
 .white[`r icons::fontawesome("github")` GitHub]
 </a>
 ]
