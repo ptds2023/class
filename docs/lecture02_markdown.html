@@ -53,16 +53,16 @@ class: center, middle, inverse, title-slide
 * **Reproducible research**: the whole process (collecting data, performing analysis, producing output,...) can be reproduced the same way by someone else.  
 
 ---
+# Is there a reproducibility crisis?
+&lt;img src="images/reproducibility.png" width="453" height="385" style="display: block; margin: auto;" /&gt;
+
+---
 # What is RMarkdown? 
 
 &gt; In a nutshell, R Markdown stands on the shoulders of knitr and Pandoc. The former executes the computer code embedded in Markdown, and converts R Markdown to Markdown. The latter renders Markdown to the output format you want (such as PDF, HTML, Word, and so on).
 .right[-- &lt;cite&gt;R Markdown: The Definitive Guide&lt;/cite&gt;]
 
 &lt;img src="images/workflow.png" width="631" height="300" style="display: block; margin: auto;" /&gt;
-
----
-# Is there a reproducibility crisis?
-&lt;img src="images/reproducibility.png" width="453" height="385" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -142,7 +142,7 @@ Plot figure options:
 ---
 class: sydney-blue, center, middle
 
-# Play 5 minutes with `https://data-analytics-lab.shinyapps.io/rmarkdown/`
+# Play 5 minutes with `https://tinyurl.com/RMdown`
 &lt;img src="images/qrcode_data-analytics-lab.shinyapps.io.png" width="300" height="300" style="display: block; margin: auto;" /&gt;
 
 &lt;!---
@@ -262,7 +262,7 @@ Instant preview without fully rebuilding HTML, and the linked navigation
 # From RMarkdown to Quarto
 &lt;img src="images/quarto.png" style="width:250px; position:absolute; top:9%; left:55%" /&gt; 
 - Similar to RMarkdown, it can render docs that contain code in R, Python, Julia,... 
-- It combines functionalities of RMarkdown and other packages into a **single system**, very useful to collaborate people who write in a different programming language from you (and do not necessarily have R/R Studio).
+- It combines functionalities of RMarkdown and other packages into a **single system**, very useful to collaborate with people who write in a different programming language from you (and do not necessarily have R/R Studio).
 
 &gt; Like R Markdown, Quarto uses Knitr to execute R code, and is therefore able to render most existing Rmd files without modification.
 &gt; &lt;cite&gt;quarto.org/&lt;/cite&gt;
@@ -284,6 +284,7 @@ class: sydney-blue, center, middle
 
 ---
 # In-class exercise (10 minutes)
+Basic manipulations:
 1. Create a RMarkdown HTML document in `RStudio` and "`knit`" it.
 1. Create a new header of type 2.
 1. Make a linear regression with "Sepal Length" as a response and 
@@ -292,11 +293,15 @@ class: sydney-blue, center, middle
 1. Print the summary of the linear regression.
 1. Include the QQplot from the linear regression. Change to filled dots.
 1. Print the head of the `iris` dataset with `kable`.
-1. Remove the `.` from the labels (click [here](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#change-column-names))
+1. Remove the `.` from the labels (click [here](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#change-column-names)).
+
+---
+# In-class exercise (10 minutes)
+More advanced manipulations:
 1. Install `kableExtra`. And perform the examples shown in the slides with `iris` dataset.
 1. Using Mathpix, reproduce equation (6.1) of the paper [https://arxiv.org/abs/math/0303109](https://arxiv.org/abs/math/0303109)
 1. Add the Reference and cite it in the RMarkdown.
-1. Try to make it into a Quarto document.
+1. Recreate your RMarkdown into a Quarto document.
 
 ---
 # To go further
