@@ -475,7 +475,7 @@ class: sydney-blue, center, middle
 ]
 
 ---
-# In-class exercise (10 minutes)
+# Exercise
 * What does the following code return?
 ```{r, eval=F}
 x <- 2

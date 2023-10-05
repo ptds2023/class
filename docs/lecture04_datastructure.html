@@ -43,7 +43,7 @@ class: center, middle, inverse, title-slide
 
 # Let's dive into `R` programming
 
-&lt;img src="images/r_programming.png" width="1759" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/r_programming.png" width="1809" style="display: block; margin: auto;" /&gt;
 
 ---
 # Brief histo`R`y
@@ -978,6 +978,96 @@ tennis[, c("height", "date_of_birth")]
 ```
 
 ---
+# Tibble
+- Tibble is a modern alternative to data frame championed by H. Wickham. He claims it is *lazy and surly* data frame (with a bit of humor).
+- Tibble is lazy because it never coerces its input. For instance, it does not transform non-syntactic names:
+
+```r
+library(tibble) # you need to install an extra library (or package)
+names(data.frame(`1` = 1:3, `?` = 4:6))
+```
+
+```
+## [1] "X1" "X."
+```
+
+```r
+names(tibble(`1` = 1:3, `?` = 4:6))
+```
+
+```
+## [1] "1" "?"
+```
+---
+- Tibble is surly, for example it does not automatically recycle shorter columns (unless of length 1) whereas data frame do so if columns length are integer multiples:
+
+```r
+data.frame(a = 1:4, b = 1:2)
+```
+
+```
+##   a b
+## 1 1 1
+## 2 2 2
+## 3 3 1
+## 4 4 2
+```
+
+```r
+tibble(a = 1:4, b = 1:2)
+```
+
+```
+## Error in `tibble()`:
+## ! Tibble columns must have compatible sizes.
+## • Size 4: Existing data.
+## • Size 2: Column `b`.
+## ℹ Only values of size one are recycled.
+```
+---
+- Tibble allows you to interact with variables during creation:
+
+```r
+tibble(a = 1:3, b = 2 + 2 * a)
+```
+
+```
+## # A tibble: 3 × 2
+##       a     b
+##   &lt;int&gt; &lt;dbl&gt;
+## 1     1     4
+## 2     2     6
+## 3     3     8
+```
+---
+- A last notable difference, tibble by default prints only the first 10 rows:
+
+```r
+set.seed(1)
+tibble(x = rnorm(1e3), y = rexp(1e3))
+```
+
+```
+## # A tibble: 1,000 × 2
+##         x      y
+##     &lt;dbl&gt;  &lt;dbl&gt;
+##  1 -0.626 0.601 
+##  2  0.184 0.750 
+##  3 -0.836 0.167 
+##  4  1.60  2.21  
+##  5  0.330 0.0553
+##  6 -0.820 0.727 
+##  7  0.487 0.583 
+##  8  0.738 0.198 
+##  9  0.576 3.54  
+## 10 -0.305 4.01  
+## # ℹ 990 more rows
+```
+
+
+
+
+---
 # In-class exercise (5 minutes)
 Using the following code:
 
@@ -1000,7 +1090,6 @@ Compare with `cov(C)`.
 # To go further
 * More details and examples in the book [An Introduction to Statistical Programming Methods with R](https://smac-group.github.io/ds/section-data.html)
 * More advanced remarks in [Advanced R](https://adv-r.hadley.nz/index.html), Chapters 2, 3 and 4.
-* Discover about Tibbles in [R for Data Science](https://r4ds.had.co.nz/tibbles.html)
 
 ---
 class: sydney-blue, center, middle

@@ -437,7 +437,7 @@ rep(c(1,2), times = 2, each = 2)
 ```
 
 ---
-# In-class exercise (3 minutes)
+# Exercise
 1. Let `x <- 3 * seq_len(4)`. Select the 2nd element of `x` with (a) positive, (b) negative and (c) logical indices.
 2. Sort `x` in descending order using (a) a sequence of positive indices and (b) the `sort` function.  
 
@@ -587,7 +587,37 @@ tennis[, c("height", "date_of_birth")]
 ```
 
 ---
-# In-class exercise (5 minutes)
+# Tibble
+- Tibble is a modern alternative to data frame championed by H. Wickham. He claims it is *lazy and surly* data frame (with a bit of humor).
+- Tibble is lazy because it never coerces its input. For instance, it does not transform non-syntactic names:
+```{r tibble vs dataframe 1}
+library(tibble) # you need to install an extra library (or package)
+names(data.frame(`1` = 1:3, `?` = 4:6))
+names(tibble(`1` = 1:3, `?` = 4:6))
+```
+---
+- Tibble is surly, for example it does not automatically recycle shorter columns (unless of length 1) whereas data frame do so if columns length are integer multiples:
+```{r tibble vs dataframe 2, error=TRUE}
+data.frame(a = 1:4, b = 1:2)
+tibble(a = 1:4, b = 1:2)
+```
+---
+- Tibble allows you to interact with variables during creation:
+```{r tibble vs dataframe 3}
+tibble(a = 1:3, b = 2 + 2 * a)
+```
+---
+- A last notable difference, tibble by default prints only the first 10 rows:
+```{r tibble vs dataframe 4}
+set.seed(1)
+tibble(x = rnorm(1e3), y = rexp(1e3))
+```
+
+
+
+
+---
+# Exercise
 Using the following code:
 ```{r, eval=F}
 set.seed(1)
@@ -608,7 +638,6 @@ Compare with `cov(C)`.
 # To go further
 * More details and examples in the book [An Introduction to Statistical Programming Methods with R](https://smac-group.github.io/ds/section-data.html)
 * More advanced remarks in [Advanced R](https://adv-r.hadley.nz/index.html), Chapters 2, 3 and 4.
-* Discover about Tibbles in [R for Data Science](https://r4ds.had.co.nz/tibbles.html)
 
 ---
 class: sydney-blue, center, middle
