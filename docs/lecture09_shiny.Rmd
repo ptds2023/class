@@ -2,7 +2,7 @@
 title: "Programming Tools in Data Science"
 subtitle: "Lecture #9: Shiny app I"
 author: "Samuel Orso"
-date: "8 November 2022"
+date: "26 October 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
@@ -23,18 +23,50 @@ output:
 ---
 # Shiny web app
 
-* Communication: allows users to interact with data and analysis
-* Shiny allows fast development of web application with `R` without the background in HTML, CSS and JavaScript.
-* Increasingly used within industry for collaboration, or for communication
+* **Communication**: allows users to interact with data and analysis.
+* Shiny allows fast development of web application with `R` without the need of having a background in HTML, CSS and JavaScript (also it could be useful).
+* Increasingly used within industry for collaboration and/or communication
 
 ---
-# Example
+# Example: interacte with graphics
+```{r}
+knitr::include_url("https://gallery.shinyapps.io/095-plot-interaction-advanced/")
+```
+
+Source: <https://shiny.posit.co/r/gallery>
+
+---
+# Example: download a report
+```{r}
+knitr::include_url("https://gallery.shinyapps.io/016-knitr-pdf/")
+```
+
+Source: <https://shiny.posit.co/r/gallery>
+
+---
+# Example: rental cashflow calculator 
+```{r}
+knitr::include_url("https://cashflowcalc.com/")
+```
+
+Source: <https://deanattali.com/>
+
+---
+# Example: Movie explorer
+```{r}
+knitr::include_url("https://gallery.shinyapps.io/051-movie-explorer/")
+```
+
+Source: <https://shiny.posit.co/>
+
+---
+# Example: Be a DJ
 
 ```{r,eval=FALSE}
 OSUICode::run_example("intro/dj-system",package = "OSUICode")
 ```
 
-* Quick example from RStudio
+Ref: <https://github.com/DivadNojnarg/OSUICode>
 
 ---
 # Hello, world!
@@ -487,7 +519,7 @@ You can decide of the view you prefer <img src="images/shiny_view.png" style="he
 * See also [Shiny RStudio articles](https://shiny.rstudio.com/articles/)
 
 ---
-# In-class exercise (for the rest of the class)
+# Exercise
 1. Develop the app seen in class by adding a second tab with a data table that reports summary statistics of the Old Faithful Geyser (see the UI of the [Buffon's needle example](https://smac-group.github.io/ds/section-shiny-web-applications.html#section-step-2-frontend))
 
 2. Draw the new reactive graph. Can you make the app more efficient? How?
@@ -521,7 +553,7 @@ class: sydney-blue, center, middle
 .white[`r icons::fontawesome("file")` website]
 </a>
 
-<a href="https://github.com/ptds2021/">
+<a href="https://github.com/ptds2023/">
 .white[`r icons::fontawesome("github")` GitHub]
 </a>
 ]

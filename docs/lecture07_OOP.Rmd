@@ -1,8 +1,8 @@
 ---
 title: "Programming Tools in Data Science"
-subtitle: "Lecture #8: Function II"
+subtitle: "Lecture #7: Object-oriented programming"
 author: "Samuel Orso"
-date: "8 November 2022"
+date: "26 October 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
@@ -203,7 +203,7 @@ plot(image)
 ```
 
 ---
-* Thanks to `...`, you can pass other arguments (be careful) (see for meaningful arguments `?heatmap`)
+* Thanks to `...`, you can pass other arguments (but be careful) (see for meaningful arguments `?heatmap`)
 
 ```{r,fig.align='center',fig.height=6,fig.width=6}
 plot(image, col = cm.colors(256), xlab = "x axis", ylab = "y axis")
@@ -212,10 +212,10 @@ plot(image, col = cm.colors(256), xlab = "x axis", ylab = "y axis")
 ---
 # To go further
 * More details and examples in the book [An Introduction to Statistical Programming Methods with R](https://smac-group.github.io/ds/section-functions.html)
-* More advanced remarks in [Advanced R](https://adv-r.hadley.nz/index.html), Chapters 6, 7 and 8 for functions, Chapters 12 to 16 for object-oriented programming.
+* More advanced remarks in [Advanced R](https://adv-r.hadley.nz/index.html), Chapters 6, 7 and 8 for functions, Chapters 12 to 16 for object-oriented programming. More specifically, other OO paradigms (S4, R6) are presented.
 
 ---
-# In-class exercises (10 min)
+# Exercises 
 1. Create a `summary` function for the class `pixel`. Verify the dispatch before and after implementing the summary function.
 2. Describe the difference between `t.test()` and `t.data.frame()`. What happens if you run the following code and why?
     ```{r, eval=F}
@@ -261,7 +261,7 @@ class: sydney-blue, center, middle
 .white[`r icons::fontawesome("file")` website]
 </a>
 
-<a href="https://github.com/ptds2022/">
+<a href="https://github.com/ptds2023/">
 .white[`r icons::fontawesome("github")` GitHub]
 </a>
 ]

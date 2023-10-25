@@ -1,6 +1,6 @@
 ---
 title: "Programming Tools in Data Science"
-subtitle: "Lecture #6: Function I"
+subtitle: "Lecture #6: Function"
 author: "Samuel Orso"
 date: "12 October 2023"
 output:
