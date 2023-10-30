@@ -382,7 +382,7 @@ html_page %>% html_nodes("li em") %>% html_text()
 * For example, `div > p` selects all `<p>` elements that are children of a `<div>` element.
 
 ---
-# Example: all `em` that are children of `li`
+# Example: all `em` that are children of `p`
 ```{html}
     <p> Basic experience with <a href="www.r-project.org">R</a> and
     familiarity with the <em>Tidyverse</em> is recommended.</p> 
