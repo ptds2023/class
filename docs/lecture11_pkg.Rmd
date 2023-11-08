@@ -1,8 +1,8 @@
 ---
 title: "Programming Tools in Data Science"
-subtitle: "Lecture #10: R package"
+subtitle: "Lecture #11: R package"
 author: "Samuel Orso"
-date: "22 November 2022"
+date: "9 November 2023"
 output:
   xaringan::moon_reader:
     css: ["default", "assets/sydney-fonts.css", "assets/sydney.css"]
@@ -22,7 +22,7 @@ output:
 
 ---
 # Why making an R package?
-* Distributing code with other users.
+* Distributing code with other users. It encourages to write documentation.
 * Forces to follow strict coding convention and work processes.
 * Stability of the code with longer term maintenance and testing.
 * Ease of use when accumulating many functions.
@@ -62,8 +62,8 @@ Description: More about what it does (maybe more than one line)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://https://github.com/ptds2022/pkgtest
-BugReports: https://https://github.com/ptds2022/pkgtest/issues
+URL: https://https://github.com/ptds2023/pkgtest
+BugReports: https://https://github.com/ptds2023/pkgtest/issues
 RoxygenNote: 7.1.2
 ```
 
@@ -88,8 +88,8 @@ Depends: R (>= 4.0.0) # don't forget the space!
 * `Imports` lists the package that must be present (best practice is to write `pkg::fct()`); for example, suppose you need `ggplot2` and `dplyr`
 ```{r,eval=FALSE}
 Imports:
-    dplyr (>= 1.0.7),
-    ggplot2 (>= 3.3.5)
+    dplyr (>= 1.1.2),
+    ggplot2 (>= 3.4.3)
 ```
 Versioning ensures that users have the right version of the package.
 
@@ -165,12 +165,12 @@ hello <- function() {
 
 ---
 # A simple example
-* Suppose you want to make the `supermarket_sales.csv` data available to the users.
+* Suppose you want to make the `snipes.csv` data available to the users.
 * One straightforward way to achieve that is with this code:
 ```{r, eval=F}
-## code to prepare `supermarket_sales.csv` dataset
-supermarket <- read.csv(file = "data-raw/supermarket_sales.csv")
-usethis::use_data(supermarket, overwrite = TRUE)
+## code to prepare `snipes.csv` dataset
+snipes <- read.csv(file = "data-raw/snipes.csv")
+usethis::use_data(snipes, overwrite = TRUE)
 ```
 * The code is placed in `data-raw/` folder and kept for future usage (but omitted from package building).
 
@@ -180,16 +180,17 @@ usethis::use_data(supermarket, overwrite = TRUE)
 * `@format` provides an overview of the dataset,
 * `@source` gives details on where the data was obtained.
 ```{r, eval=FALSE}
-#' Supermarket sales data from Kaggle
+#' Snipes price data
 #'
-#' @format ## `supermarket`
-#' A data frame with 1,000 rows and 17 columns:
+#' @format ## `snipes`
+#' A data frame with 48 rows and 3 columns:
 #' \describe{
-#'   \item{Invoice.ID}{Computer generated sales slip invoice identification number}
-#'   ...
+#'   \item{discount}{Discounted price of sneakers}
+#'   \item{brand}{Brand of sneakers}
+#'   \item{price}{Original price of sneakers}
 #' }
-#' @source <https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales>
-"supermarket"
+#' @source <https://www.snipes.ch/>
+"snipes"
 ```
 
 ---
@@ -236,7 +237,7 @@ In `R/`
 #' @seealso \code{\link[stats]{lm}}, \code{\link[stats]{coef}}
 #' @example /inst/examples/eg_reg_coef.R
 #' @export
-`%c%` <- function(y, x) {
+`%r%` <- function(y, x) {
   fit <- lm(y ~ x)
   coef(fit)
 }
@@ -286,11 +287,11 @@ For example, the file `tests/testthat/test_reg_coef.R`
 
 ```{r,eval=FALSE}
 test_that("regression coefficient input check",{
-  expect_error(cars$speed %c% cars)
+  expect_error(cars$speed %r% cars)
 })
 
 test_that("regression coefficient output",{
-  expect_type(cars$speed %c% cars$dist, "double")
+  expect_type(cars$speed %r% cars$dist, "double")
 })
 ```
 
@@ -331,7 +332,7 @@ knitr::include_graphics("images/pkgdow_pkgtest.png")
 ```
 
 ---
-Find all the code presented here: <https://github.com/ptds2022/pkgtest>
+Find all the code presented here: <https://github.com/ptds2023/pkgtest>
 
 ---
 # To go further
@@ -349,7 +350,7 @@ class: sydney-blue, center, middle
 .white[`r icons::fontawesome("file")` website]
 </a>
 
-<a href="https://github.com/ptds2021/">
+<a href="https://github.com/ptds2023/">
 .white[`r icons::fontawesome("github")` GitHub]
 </a>
 ]
@@ -358,14 +359,14 @@ class: sydney-blue, center, middle
 # Exercise
 * Create a package from RStudio new project with the following function:
   ```{r, eval=FALSE}
-`%c%` <- function(y, x) {
+`%r%` <- function(y, x) {
   fit <- lm(y ~ x)
   coef(fit)
 }
 ```
 * Modify the DESCRIPTION: add an author, a license, dependencies, ...
 * Document the function using roxygen2 (verify your `Build tools` options).
-* Add the `supermaket` dataset from HW2 to the package (keep the raw data, create a `.rda` file, document the dataset).
+* Create and add a `snipes` dataset from HW3 to the package (keep the raw data, create a `.rda` file, document the dataset).
 * Construct a vignette.
 * Add examples on how to use the function.
 * Add tests with `testthat`.
