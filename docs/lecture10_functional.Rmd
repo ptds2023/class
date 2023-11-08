@@ -487,3 +487,4 @@ product_sales <- list(
 * See [Functionals](https://adv-r.hadley.nz/functionals.html), [Function factories](https://adv-r.hadley.nz/function-factories.html) and [Function operators](https://adv-r.hadley.nz/function-operators.html) chapters of [Advanced R](https://adv-r.hadley.nz/index.html) written by H. Wickham.
 * See [`purrr` cheatsheet](https://maraaverick.rbind.io/banners/purrr_apply_cheatsheet_rstudio.png).
 * See [Loop Functions](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html) and [Parallel Computation](https://bookdown.org/rdpeng/rprogdatascience/parallel-computation.html) chapters of [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) written by R.D. Peng.
+* The article [Cleaner R Code with Functional Programming](https://towardsdatascience.com/cleaner-r-code-with-functional-programming-adc37931ef7a) by Tim Book.

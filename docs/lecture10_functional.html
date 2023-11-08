@@ -714,19 +714,19 @@ mclapply(1:5, measure_time, mc.cores = 5)
 
 ```
 ## [[1]]
-## Time difference of 1.001171 secs
+## Time difference of 1.000397 secs
 ## 
 ## [[2]]
-## Time difference of 2.002247 secs
+## Time difference of 2.00121 secs
 ## 
 ## [[3]]
-## Time difference of 3.003069 secs
+## Time difference of 3.00318 secs
 ## 
 ## [[4]]
-## Time difference of 4.00402 secs
+## Time difference of 4.003298 secs
 ## 
 ## [[5]]
-## Time difference of 5.005261 secs
+## Time difference of 5.004398 secs
 ```
 
 ```r
@@ -751,19 +751,19 @@ parLapply(cl, 1:5, measure_time)
 
 ```
 ## [[1]]
-## Time difference of 1.001349 secs
+## Time difference of 1.001193 secs
 ## 
 ## [[2]]
-## Time difference of 2.000565 secs
+## Time difference of 2.002205 secs
 ## 
 ## [[3]]
-## Time difference of 3.001367 secs
+## Time difference of 3.002846 secs
 ## 
 ## [[4]]
-## Time difference of 4.002995 secs
+## Time difference of 4.003711 secs
 ## 
 ## [[5]]
-## Time difference of 5.004654 secs
+## Time difference of 5.005257 secs
 ```
 
 ```r
@@ -779,7 +779,7 @@ sprintf("In total, it took %.1f seconds to run", difftime(t2,t1,units="secs"))
 ```
 
 ```
-## [1] "In total, it took 5.0 seconds to run"
+## [1] "In total, it took 5.1 seconds to run"
 ```
 
 
@@ -822,6 +822,7 @@ product_sales &lt;- list(
 * See [Functionals](https://adv-r.hadley.nz/functionals.html), [Function factories](https://adv-r.hadley.nz/function-factories.html) and [Function operators](https://adv-r.hadley.nz/function-operators.html) chapters of [Advanced R](https://adv-r.hadley.nz/index.html) written by H. Wickham.
 * See [`purrr` cheatsheet](https://maraaverick.rbind.io/banners/purrr_apply_cheatsheet_rstudio.png).
 * See [Loop Functions](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html) and [Parallel Computation](https://bookdown.org/rdpeng/rprogdatascience/parallel-computation.html) chapters of [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) written by R.D. Peng.
+* The article [Cleaner R Code with Functional Programming](https://towardsdatascience.com/cleaner-r-code-with-functional-programming-adc37931ef7a) by Tim Book.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
