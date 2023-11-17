@@ -2,6 +2,7 @@
 library(shiny)
 library(DT)
 library(magrittr)
+library(bslib)
 
 # Define UI for the application
 ui <- fluidPage(
