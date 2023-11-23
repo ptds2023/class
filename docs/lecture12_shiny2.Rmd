@@ -61,7 +61,7 @@ sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), #<<
 # Namespace
 * Each namespace has an imports environment controlled by the package developer (see previous lecture).
 * The parent of the imports environment is the base namespace.
-* The parent of the base namespace if the global environment.
+* The parent of the base namespace is the global environment.
 
 ---
 # Simple example
@@ -401,7 +401,7 @@ knitr::include_graphics("images/profiling_shiny.png")
 <img src="images/lighthouse-logo.svg" style="height:100px; width:100px; position:absolute; top:7%; right:20%;"/>
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) allows to perform a profiling from the user's perspective via Google Chrome web browser.
 * To use this tool:
-  1. Open Chrome-based browser in incognito mode (so the experience is a neutral as possible).
+  1. Open Chrome-based browser in incognito mode (so the experience is as neutral as possible).
   2. Enter the Shiny App url.
   3. Open the `Developer tools`.
   4. Click on `Lighthouse`.
