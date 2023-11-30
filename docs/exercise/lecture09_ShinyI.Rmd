@@ -1,0 +1,104 @@
+---
+title: "lecture09_ShinyI"
+author: "Aleksandr Shemendyuk"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+The efficiency improvements in the revised Shiny app primarily come from the use of reactive expressions and event-based reactivity. Let's break down these aspects:
+
+1.  **Use of `eventReactive` for Histogram Creation**:
+
+*   In the original app, the histogram was recalculated every time any input changed, including text inputs, which do not affect the histogram calculation. This was inefficient.
+*   In the revised app, `eventReactive` is used. This means the histogram is only recalculated when the "Make the plot!" button is pressed (`input$make_graph`). This reduces unnecessary recalculations and improves efficiency.
+
+2.  **Separation of Concerns in Reactive Expressions**:
+
+*   The histogram and data summary table are handled by separate reactive expressions (`reactive_hist` and `reactive_summary`). This encapsulation ensures that each reactive expression is only responsible for and only recalculates its specific output.
+*   This approach avoids the pitfall of having a single reactive context for multiple outputs, which could lead to unnecessary recalculations of all outputs when only one needs updating.
+
+3.  **Reduction in Rendering Overhead**:
+
+*   By using `renderPlot` and `renderDT` only once in the server function and linking them to reactive expressions, the rendering of the plot and the data table is only triggered when necessary.
+*   This ensures that the server doesn't waste resources constantly checking and re-rendering these outputs unless there's a change that requires an update.
+
+4.  **Efficient Data Handling**:
+
+*   The summary statistics for the data table are calculated once per relevant input change, not every time the UI is rendered. This is particularly important for larger datasets where such calculations can be computationally expensive.
+
+```{r}
+# Load necessary libraries
+library(shiny)
+library(DT)
+library(magrittr)
+
+# Define UI for the application
+ui <- fluidPage(
+  # Application title
+  titlePanel("Old Faithful Geyser Data"),
+  
+  # Adding theme support
+  # theme = bs_theme(),
+  
+  # Using tabsetPanel to add multiple tabs
+  tabsetPanel(
+    # First tab: Original histogram functionality
+    tabPanel(
+      "Histogram",
+      sidebarLayout(
+        sidebarPanel(
+          sliderInput("cells", "Number of cells:", min = 1, max = 50, value = 30),
+          textInput("label_x", "Label for the x-axis:"),
+          textInput("title", "Title for the graph:"),
+          actionButton("make_graph", "Make the plot!", icon = icon("drafting-compass"))
+        ),
+        mainPanel(
+          plotOutput("distPlot")
+        )
+      )
+    ),
+    # Second tab: Data table for summary statistics
+    tabPanel(
+      "Data Summary",
+      DTOutput("dataTable")
+    )
+  )
+)
+
+# Define server logic for the application
+server <- function(input, output, session) {
+  # Adding theme control
+  # bs_themer()
+  
+  # Reactive expression for creating the histogram
+  reactive_hist <- eventReactive(input$make_graph, {
+    hist(faithful[, 2],
+         breaks = seq(min(faithful[, 2]), max(faithful[, 2]), length.out = input$cells + 1),
+         col = "darkgray", border = "white", xlab = input$label_x, main = input$title
+    )
+  })
+  
+  # Render the histogram plot
+  output$distPlot <- renderPlot({
+    reactive_hist()
+  })
+  
+  # Reactive expression for creating the data summary
+  reactive_summary <- reactive({
+    data.frame(
+      Summary = c("Min", "1st Qu.", "Median", "Mean", "3rd Qu.", "Max"),
+      Value = as.numeric(summary(faithful[, 2]))
+    )
+  })
+  
+  # Render the data table
+  output$dataTable <- renderDT(
+    {
+      reactive_summary()
+    },
+    options = list(pageLength = 6)
+  )
+}
+
+# shineApp(ui = ui, server = server)
+```
